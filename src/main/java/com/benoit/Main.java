@@ -20,6 +20,11 @@ public class Main {
         System.out.println("The correct answer is: " + correctAnswer);
     }
 
+    public static void printResults(String name){
+        String goodbye = "Thanks for taking the quiz " + name + "! ";
+        System.out.println(goodbye);
+    }
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -29,9 +34,9 @@ public class Main {
         int num1;
         int num2;
         String op;
-        String question;
+        //String question;
         int userAnswer;
-        String goodbye;
+        //String goodbye;
         int correctAnswer;
 
         // personalized greeting
@@ -39,7 +44,7 @@ public class Main {
         String name = scan.nextLine();
         greetUser(name);
 
-        // Questions
+        // Question 1
         num1 = random.nextInt(10) + 1;
         num2 = random.nextInt(10) + 1;
         op = " + ";
@@ -57,5 +62,81 @@ public class Main {
 
 
 
+
+        // Question 2
+        num1 = random.nextInt(10) + 1;
+        num2 = random.nextInt(10) + 1;
+        op = " - ";
+        printQuestions(num1, num2, op);
+
+        // Input for question1
+        System.out.print("Answer is: ");
+        userAnswer = scan.nextInt();
+
+        // Compute the correct answer
+        correctAnswer = num1 - num2;
+
+        // Feedback
+        answerFeedback(userAnswer, correctAnswer);
+
+
+
+
+        // Question 3
+        num1 = random.nextInt(10) + 1;
+        num2 = random.nextInt(10) + 1;
+        op = " / ";
+        printQuestions(num1, num2, op);
+
+        // Input for question1
+        System.out.print("Answer is: ");
+        userAnswer = scan.nextInt();
+
+        // Compute the correct answer
+        correctAnswer = num1 / num2;
+
+        // Feedback
+        answerFeedback(userAnswer, correctAnswer);
+
+
+
+
+        // Question 4
+        num1 = random.nextInt(10) + 1;
+        num2 = random.nextInt(10) + 1;
+        op = " + ";
+        printQuestions(num1, num2, op);
+
+        // Input for question1
+        System.out.print("Answer is: ");
+        userAnswer = scan.nextInt();
+
+        // Compute the correct answer
+        correctAnswer = num1 + num2;
+
+        // Feedback
+        answerFeedback(userAnswer, correctAnswer);
+
+
+
+        // Question 5
+        num1 = random.nextInt(10) + 1;
+        num2 = random.nextInt(10) + 1;
+        op = " * ";
+        printQuestions(num1, num2, op);
+
+        // Input for question1
+        System.out.print("Answer is: ");
+        userAnswer = scan.nextInt();
+
+        // Compute the correct answer
+        correctAnswer = num1 * num2;
+
+        // Feedback
+        answerFeedback(userAnswer, correctAnswer);
+
+
+        // Farewell message
+        printResults(name);
     }
 }
