@@ -4,6 +4,22 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+    // Method to get users name
+    public static void greetUser(String name) {
+        String greeting = "Welcome " + name + "!" + " Are you ready for your quiz?";
+        System.out.println(greeting);
+    }
+    // Method to ask questions
+    public static void printQuestions(int num1, int num2, String op) {
+        String question = "What is " + num1 +  op  + num2 + "?";
+        System.out.println(question);
+    }
+
+    public static void answerFeedback(int userAnswer, int correctAnswer){
+        System.out.println("Your answer is: " + userAnswer);
+        System.out.println("The correct answer is: " + correctAnswer);
+    }
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -21,14 +37,13 @@ public class Main {
         // personalized greeting
         System.out.println("what is your name?");
         String name = scan.nextLine();
-        System.out.println("Welcome " + name + "!" + " Are you ready for your quiz?");
+        greetUser(name);
 
         // Questions
         num1 = random.nextInt(10) + 1;
         num2 = random.nextInt(10) + 1;
         op = " + ";
-        question = "What is " + num1 +  op  + num2 + "?";
-        System.out.println(question);
+        printQuestions(num1, num2, op);
 
         // Input for question1
         System.out.print("Answer is: ");
@@ -38,8 +53,7 @@ public class Main {
         correctAnswer = num1 + num2;
 
         // Feedback
-        System.out.println("Your answer is: " + userAnswer);
-        System.out.println("Your answer is: " + correctAnswer);
+        answerFeedback(userAnswer, correctAnswer);
 
 
 
